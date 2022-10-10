@@ -1,20 +1,26 @@
-export default function tabNav() {
-  const tabMenu = document.querySelectorAll('[data-tab="menu"] li');
-  const tabConteudo = document.querySelectorAll('[data-tab="content"] section');
+export default class TabNav {
+  constructor(menu, content) {
+    this.tabMenu = document.querySelectorAll(menu);
+    this.tabContent = document.querySelectorAll(content);
+  }
 
-  function activeTab(index) {
-    tabConteudo.forEach((section) => {
+  activeTab(index) {
+    this.tabContent.forEach((section) => {
       section.classList.remove("ativo");
     });
-    tabConteudo[index].classList.add(
+    this.tabContent[index].classList.add(
       "ativo",
-      tabConteudo[index].dataset.animar
+      this.tabContent[index].dataset.animar
     );
   }
 
-  tabMenu.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      activeTab(index);
+  addTabNavEvent() {
+    this.tabMenu.forEach((item, index) => {
+      item.addEventListener("click", () => this.activeTab(index));
     });
-  });
+  }
+
+  init() {
+    this.addTabNavEvent();
+  }
 }
