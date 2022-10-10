@@ -1,12 +1,9 @@
 {
-  "name": "002.-animais-webpack",
-  "version": "1.0.0",
-  "main": "index.html",
+  "name": "animais-fantasticos",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch"
   },
-  "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
