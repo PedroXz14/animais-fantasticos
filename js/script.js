@@ -4,12 +4,14 @@ import initFetchAnimais from "./modules/fetch-animais.js";
 import funcionamento from "./modules/funcionamento.js";
 import menuHamburguer from "./modules/menu-hamburguer.js";
 import modal from "./modules/modal.js";
-import { animacaoAoScroll, scrollSuave } from "./modules/scroll.js";
+import { animacaoAoScroll, ScrollSuave } from "./modules/scroll.js";
 import tabNav from "./modules/tab-nav.js";
 import tooltip from "./modules/tooltip.js";
 
 animacaoAoScroll();
-scrollSuave();
+const scrollSuave = new ScrollSuave('.menu a[href^="#"]');
+scrollSuave.init();
+
 tabNav();
 modal();
 tooltip();
