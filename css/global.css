@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #faf6ed;
+  color: #222222;
+  -webkit-font-smoothing: antialiased;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+ul,
+summary {
+  list-style: none;
+}
+
+.menu {
+  grid-column: 3 / 5;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  background: #222222; /* #ffbb55 */
+  border-radius: 6px;
+}
+
+.menu ul {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 10px;
+  color: #ffffff; /* #222222 */
+  text-decoration: none;
+  text-transform: uppercase;
+  font: 400 0.875rem "Poppins", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.menu li a:hover {
+  color: #b9b9b9; /* #ffffff */
+}
+
+.grid-section {
+  grid-column: 2 / 4;
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+.titulo {
+  font: 400 5.5rem/1 "Poppins", sans-serif;
+  margin-bottom: 16px;
+  grid-column: 1 / 4;
+  text-transform: uppercase;
+}
+
+.animais h2 {
+  font: 400 1rem "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  color: #ee5544;
+}
+
+.animais h2::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 10px;
+  margin-right: 10px;
+  background: #ffbb55;
+}
+
+.animais p {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.animais-lista {
+  height: 370px;
+  overflow-y: scroll;
+  grid-column: 2;
+  cursor: pointer;
+}
+
+.animais-descricao {
+  grid-column: 3;
+}
+
+.animais-descricao section {
+  margin-bottom: 48px;
+}
+
+.faq-perguntas {
+  grid-column: 2 / 4;
+}
+
+.faq-perguntas summary {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #ee5544;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-perguntas summary::before,
+.dados li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background: #ffbb55;
+}
+
+.faq-perguntas summary > i {
+  position: absolute;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.faq-perguntas summary:hover i,
+.faq-perguntas details[open] summary i {
+  transform: rotate(180deg);
+}
+
+.faq-perguntas details[open] summary:hover i {
+  transform: none;
+}
+
+.faq-perguntas p {
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 24px;
+  margin-left: 30px;
+}
+
+.mapa {
+  grid-column: 2;
+}
+
+.dados li {
+  margin-bottom: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.dados [data-semana].fechado::after {
+  content: "Fechado";
+  background: red;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.dados [data-semana].aberto::after {
+  content: "Aberto";
+  background: #33ff44;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.btc-preco {
+  background: #33ff44;
+  padding: 4px 8px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.copy {
+  grid-column: 3 / 5;
+  margin-bottom: 32px;
+  background: #000000; /* #ffbb55 */
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+.copy p {
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .menu,
+  .grid-section,
+  .copy {
+    grid-column: 1;
+  }
+
+  .grid-section {
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+  }
+
+  .animais-lista {
+    grid-column: 1;
+  }
+
+  .faq-lista,
+  .dados,
+  .mapa {
+    grid-column: 1 / 3;
+  }
+
+  .grid-section h1 {
+    font-size: 3rem;
+  }
+
+  .menu {
+    margin-top: 0;
+  }
+
+  .copy {
+    margin-bottom: 0;
+  }
+}
+
+.js [data-tab="content"] section {
+  display: none;
+}
+
+.js [data-tab="content"] section.ativo {
+  display: block;
+}
+
+.js [data-tab="content"] section.ativo.show-right {
+  animation: show-right 0.5s forwards;
+}
+
+.js [data-tab="content"] section.ativo.show-down {
+  animation: show-down 0.5s forwards;
+}
+
+.js [data-animar="scroll"] {
+  opacity: 0;
+  transform: translate3d(-30px, 0, 0);
+  transition: 0.3s;
+}
+
+.js [data-animar="scroll"].ativo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

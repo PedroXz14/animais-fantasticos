@@ -1,0 +1,31 @@
+.numeros {
+  display: none;
+}
+
+.js .numeros {
+  display: block;
+}
+
+.numeros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  grid-column: 2/ 4;
+}
+
+.numeros-grid h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.numeros-grid span {
+  font: 700 1.5rem "Roboto", sans-serif;
+  color: #ee5544;
+}
+
+@media (max-width: 700px) {
+  .numeros-grid {
+    grid-column: 1;
+  }
+}

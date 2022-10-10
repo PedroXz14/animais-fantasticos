@@ -1,0 +1,11 @@
+.js .tooltip {
+  position: absolute;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.6);
+  padding: 8px;
+  font: 700 0.875rem "Poppins", sans-serif;
+  max-width: 170px;
+  border-radius: 6px;
+}
