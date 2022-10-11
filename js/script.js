@@ -6,7 +6,7 @@ import menuHamburguer from "./modules/menu-hamburguer.js";
 import Modal from "./modules/modal.js";
 import { animacaoAoScroll, ScrollSuave } from "./modules/scroll.js";
 import TabNav from "./modules/tab-nav.js";
-import tooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 
 animacaoAoScroll();
 
@@ -26,7 +26,9 @@ const modal = new Modal(
 );
 modal.init();
 
-tooltip();
+const tooltip = new Tooltip("[data-tooltip]");
+tooltip.init();
+
 dropdown();
 menuHamburguer();
 funcionamento();
