@@ -3,7 +3,7 @@ import initFetchAnimais from "./modules/fetch-animais.js";
 // import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 import funcionamento from "./modules/funcionamento.js";
 import menuHamburguer from "./modules/menu-hamburguer.js";
-import modal from "./modules/modal.js";
+import Modal from "./modules/modal.js";
 import { animacaoAoScroll, ScrollSuave } from "./modules/scroll.js";
 import TabNav from "./modules/tab-nav.js";
 import tooltip from "./modules/tooltip.js";
@@ -19,7 +19,13 @@ const tabNav = new TabNav(
 );
 tabNav.init();
 
-modal();
+const modal = new Modal(
+  '[data-modal="abrir"]',
+  '[data-modal="fechar"]',
+  '[data-modal="container"]'
+);
+modal.init();
+
 tooltip();
 dropdown();
 menuHamburguer();
