@@ -1,4 +1,4 @@
-import animarNumeros from "./animar-numeros.js";
+import AnimarNumeros from "./animar-numeros.js";
 
 export default function initFetchAnimais() {
   async function fetchAnimais(url) {
@@ -18,7 +18,12 @@ export default function initFetchAnimais() {
       numeros.appendChild(animalDiv);
     });
 
-    animarNumeros();
+    const animarNumeros = new AnimarNumeros(
+      "[data-numero]",
+      ".numeros",
+      "ativo"
+    );
+    animarNumeros.init();
   }
 
   fetchAnimais("./animais-api.json");
