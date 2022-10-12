@@ -1,6 +1,6 @@
 import dropdown from "./modules/dropdown-menu.js";
 import fetchAnimais from "./modules/fetch-animais.js";
-// import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import funcionamento from "./modules/funcionamento.js";
 import menuHamburguer from "./modules/menu-hamburguer.js";
 import Modal from "./modules/modal.js";
@@ -33,4 +33,4 @@ dropdown();
 menuHamburguer();
 funcionamento();
 fetchAnimais("../../animais-api.json", ".numeros-grid");
-// initFetchBitcoin();
+fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
