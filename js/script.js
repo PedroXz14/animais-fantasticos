@@ -1,5 +1,5 @@
 import dropdown from "./modules/dropdown-menu.js";
-import initFetchAnimais from "./modules/fetch-animais.js";
+import fetchAnimais from "./modules/fetch-animais.js";
 // import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 import funcionamento from "./modules/funcionamento.js";
 import menuHamburguer from "./modules/menu-hamburguer.js";
@@ -32,5 +32,5 @@ tooltip.init();
 dropdown();
 menuHamburguer();
 funcionamento();
-initFetchAnimais();
+fetchAnimais("../../animais-api.json", ".numeros-grid");
 // initFetchBitcoin();
