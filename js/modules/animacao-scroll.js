@@ -3,23 +3,33 @@ export default class AnimacaoScroll {
     this.sections = document.querySelectorAll(sections);
     this.metadeDaTela = window.innerHeight * 0.7;
 
-    this.animarScroll = this.animarScroll.bind(this);
+    this.checkDistance = this.checkDistance.bind(this);
   }
 
-  animarScroll() {
-    this.sections.forEach((section) => {
-      const sectionTop =
-        section.getBoundingClientRect().top - this.metadeDaTela;
-      if (sectionTop < 0) {
-        section.classList.add("ativo");
-      } else if (section.classList.contains("ativo")) {
-        section.classList.remove("ativo");
+  getDistance() {
+    this.distance = [...this.sections].map((section) => {
+      const offset = section.offsetTop;
+      return {
+        element: section,
+        offset: Math.floor(offset - this.metadeDaTela),
+      };
+    });
+  }
+
+  checkDistance() {
+    this.distance.forEach((item) => {
+      if (window.pageYOffset > item.offset) {
+        item.element.classList.add("ativo");
+      } else if (item.element.classList.contains("ativo")) {
+        item.element.classList.remove("ativo");
       }
     });
   }
 
   init() {
-    this.animarScroll();
-    window.addEventListener("scroll", this.animarScroll);
+    this.getDistance();
+    this.checkDistance();
+    window.addEventListener("scroll", this.checkDistance);
+    return this;
   }
 }
