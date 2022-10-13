@@ -1,14 +1,16 @@
+import AnimacaoScroll from "./modules/animacao-scroll.js";
 import dropdown from "./modules/dropdown-menu.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import funcionamento from "./modules/funcionamento.js";
 import menuHamburguer from "./modules/menu-hamburguer.js";
 import Modal from "./modules/modal.js";
-import { animacaoAoScroll, ScrollSuave } from "./modules/scroll.js";
+import ScrollSuave from "./modules/smooth-scroll.js";
 import TabNav from "./modules/tab-nav.js";
 import Tooltip from "./modules/tooltip.js";
 
-animacaoAoScroll();
+const animacaoScroll = new AnimacaoScroll('[data-animar="scroll"]');
+animacaoScroll.init();
 
 const scrollSuave = new ScrollSuave('.menu a[href^="#"]');
 scrollSuave.init();

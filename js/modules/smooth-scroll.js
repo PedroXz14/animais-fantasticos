@@ -1,4 +1,4 @@
-export class ScrollSuave {
+export default class ScrollSuave {
   constructor(links, options) {
     this.linksInternos = document.querySelectorAll(links);
     if (options === undefined) {
@@ -27,23 +27,4 @@ export class ScrollSuave {
     this.addLinkEvent();
     return this;
   }
-}
-
-export function animacaoAoScroll() {
-  const sections = document.querySelectorAll('[data-animar="scroll"]');
-  const metadeDaTela = window.innerHeight * 0.7;
-
-  function animarScroll() {
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top - metadeDaTela;
-      if (sectionTop < 0) {
-        section.classList.add("ativo");
-      } else if (section.classList.contains("ativo")) {
-        section.classList.remove("ativo");
-      }
-    });
-  }
-
-  animarScroll();
-  window.addEventListener("scroll", animarScroll);
 }
