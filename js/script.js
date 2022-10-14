@@ -1,5 +1,5 @@
 import AnimacaoScroll from "./modules/animacao-scroll.js";
-import dropdown from "./modules/dropdown-menu.js";
+import DropdownMenu from "./modules/dropdown-menu.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import funcionamento from "./modules/funcionamento.js";
@@ -31,7 +31,9 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
-dropdown();
+const dropdownMenu = new DropdownMenu("[data-dropdown]");
+dropdownMenu.init();
+
 menuHamburguer();
 funcionamento();
 fetchAnimais("../../animais-api.json", ".numeros-grid");
