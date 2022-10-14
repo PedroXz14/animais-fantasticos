@@ -3,10 +3,8 @@ import outsideEvent from "./outside-event.js";
 export default class DropdownMenu {
   constructor(dropdownMenus) {
     this.dropdownMenus = document.querySelectorAll(dropdownMenus);
-
     this.events = ["touchstart", "click"];
-
-    // this.activeDropdownMenu = this.activeDropdownMenu.bind(this);
+    this.activeDropdownMenu = this.activeDropdownMenu.bind(this);
   }
 
   activeDropdownMenu(e) {
