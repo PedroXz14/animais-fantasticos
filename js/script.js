@@ -2,7 +2,7 @@ import AnimacaoScroll from "./modules/animacao-scroll.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
-import funcionamento from "./modules/funcionamento.js";
+import Funcionamento from "./modules/funcionamento.js";
 import MenuHamburguer from "./modules/menu-hamburguer.js";
 import Modal from "./modules/modal.js";
 import ScrollSuave from "./modules/smooth-scroll.js";
@@ -40,6 +40,7 @@ const menuHamburguer = new MenuHamburguer(
 );
 menuHamburguer.init();
 
-funcionamento();
+const funcionamento = new Funcionamento("[data-semana]");
+funcionamento.init();
 fetchAnimais("../../animais-api.json", ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
