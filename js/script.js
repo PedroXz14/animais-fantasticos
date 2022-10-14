@@ -3,7 +3,7 @@ import DropdownMenu from "./modules/dropdown-menu.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import funcionamento from "./modules/funcionamento.js";
-import menuHamburguer from "./modules/menu-hamburguer.js";
+import MenuHamburguer from "./modules/menu-hamburguer.js";
 import Modal from "./modules/modal.js";
 import ScrollSuave from "./modules/smooth-scroll.js";
 import TabNav from "./modules/tab-nav.js";
@@ -34,7 +34,12 @@ tooltip.init();
 const dropdownMenu = new DropdownMenu("[data-dropdown]");
 dropdownMenu.init();
 
-menuHamburguer();
+const menuHamburguer = new MenuHamburguer(
+  '[data-menu="button"]',
+  '[data-menu="lista"]'
+);
+menuHamburguer.init();
+
 funcionamento();
 fetchAnimais("../../animais-api.json", ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
