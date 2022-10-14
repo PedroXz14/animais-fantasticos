@@ -3,6 +3,6 @@ export default function fetchBitcoin(url, target) {
   fetch(url)
     .then((response) => response.json())
     .then((bitcoin) => {
-      btcPreco.innerText = (100 / bitcoin.BRL.sell).toFixed(4);
+      btcPreco.innerText = (1000 / bitcoin.BRL.sell).toFixed(4);
     });
 }
