@@ -1,19 +1,31 @@
 import outsideEvent from "./outside-event.js";
 
-export default function menuHamburguer() {
-  const menuButton = document.querySelector('[data-menu="button"]');
-  const menuLista = document.querySelector('[data-menu="lista"]');
+export default class MenuHamburguer {
+  constructor(menuButton, menuList) {
+    this.menuButton = document.querySelector(menuButton);
+    this.menuList = document.querySelector(menuList);
+    this.events = ["click", "touchstart"];
 
-  function openMenu() {
-    menuButton.classList.add("active");
-    menuLista.classList.add("active");
-    outsideEvent(menuLista, ["click", "touchstart"], () => {
-      menuButton.classList.remove("active");
-      menuLista.classList.remove("active");
+    this.openMenu = this.openMenu.bind(this);
+  }
+
+  openMenu() {
+    this.menuButton.classList.add("active");
+    this.menuList.classList.add("active");
+    outsideEvent(this.menuList, this.events, () => {
+      this.menuButton.classList.remove("active");
+      this.menuList.classList.remove("active");
     });
   }
 
-  ["click", "touchstart"].forEach((userEvent) => {
-    menuButton.addEventListener(userEvent, openMenu);
-  });
+  addMenuHamburguerEvents() {
+    this.events.forEach((event) => {
+      this.menuButton.addEventListener(event, this.openMenu);
+    });
+  }
+
+  init() {
+    this.addMenuHamburguerEvents();
+    return this;
+  }
 }
