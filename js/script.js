@@ -1,12 +1,13 @@
-import AnimacaoScroll from "./modules/animacao-scroll.js";
-import DropdownMenu from "./modules/dropdown-menu.js";
-import fetchAnimais from "./modules/fetch-animais.js";
-import fetchBitcoin from "./modules/fetch-bitcoin.js";
+import AnimacaoScroll from "./modules/animacaoScroll.js";
+import DropdownMenu from "./modules/dropdownMenu.js";
+import fetchAnimais from "./modules/fetchAnimais.js";
+import fetchBitcoin from "./modules/fetchBitcoin.js";
 import Funcionamento from "./modules/funcionamento.js";
-import MenuHamburguer from "./modules/menu-hamburguer.js";
+import MenuHamburguer from "./modules/menuHamburguer.js";
 import Modal from "./modules/modal.js";
-import ScrollSuave from "./modules/smooth-scroll.js";
-import TabNav from "./modules/tab-nav.js";
+import SlideNav from "./modules/slideNav.js";
+import ScrollSuave from "./modules/smoothScroll.js";
+import TabNav from "./modules/tabNav.js";
 import Tooltip from "./modules/tooltip.js";
 
 const animacaoScroll = new AnimacaoScroll('[data-animar="scroll"]');
@@ -46,3 +47,7 @@ funcionamento.init();
 fetchAnimais("./animais-api.json", ".numeros-grid");
 
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
+
+const slide = new SlideNav(".slide", ".wrapper");
+slide.init();
+slide.addControl(".custom-controls");
