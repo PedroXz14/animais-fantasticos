@@ -32,7 +32,7 @@ summary {
   grid-column: 3 / 5;
   margin-top: 32px;
   margin-bottom: 32px;
-  background: #222222; /* #ffbb55 */
+  background: #222222;
   border-radius: 6px;
 }
 
@@ -45,7 +45,7 @@ summary {
 .menu li a {
   display: block;
   padding: 15px 10px;
-  color: #ffffff; /* #222222 */
+  color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
   font: 400 0.875rem "Poppins", sans-serif;
@@ -53,7 +53,7 @@ summary {
 }
 
 .menu li a:hover {
-  color: #b9b9b9; /* #ffffff */
+  color: #b9b9b9;
 }
 
 .grid-section {
@@ -144,6 +144,7 @@ summary {
 .faq-perguntas summary:hover i,
 .faq-perguntas details[open] summary i {
   transform: rotate(180deg);
+  transition: transform 0.3s ease-out;
 }
 
 .faq-perguntas details[open] summary:hover i {
@@ -189,7 +190,7 @@ summary {
 .copy {
   grid-column: 3 / 5;
   margin-bottom: 32px;
-  background: #000000; /* #ffbb55 */
+  background: #000000;
   color: #ffffff;
   border-radius: 6px;
 }
@@ -226,7 +227,7 @@ summary {
   }
 
   .grid-section h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .menu {
@@ -263,6 +264,17 @@ summary {
 .js [data-animar="scroll"].ativo {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+@keyframes show-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes show-right {
