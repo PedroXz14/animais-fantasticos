@@ -1,4 +1,4 @@
-import outsideEvent from "./outside-event.js";
+import outsideEvent from "./outsideEvent.js";
 
 export default class DropdownMenu {
   constructor(dropdownMenus) {

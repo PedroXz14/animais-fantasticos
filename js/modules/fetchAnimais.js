@@ -1,4 +1,4 @@
-import AnimarNumeros from "./animar-numeros.js";
+import AnimarNumeros from "./animarNumeros.js";
 
 export default function fetchAnimais(url, target) {
   const numeros = document.querySelector(target);
