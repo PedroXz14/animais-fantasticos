@@ -9,7 +9,8 @@ export default class MenuHamburguer {
     this.openMenu = this.openMenu.bind(this);
   }
 
-  openMenu() {
+  openMenu(e) {
+    e.preventDefault();
     this.menuButton.classList.add("active");
     this.menuList.classList.add("active");
     outsideEvent(this.menuList, this.events, () => {
